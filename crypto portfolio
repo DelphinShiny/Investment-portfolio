@@ -1,0 +1,23 @@
+create table `delinparis.crypto_investment.crypto_portofolio`
+as
+(select *,
+round(market_value - purchase_price,4) as gain,
+round((market_value -purchase_price)/purchase_price,4) as growth
+from
+(select *,
+round(coins*purchase_unit_price,4) as purchase_price,
+round(coins*current_unit_price,4) as market_value
+from
+(SELECT
+string_field_0 as crypto_ticker,
+string_field_1 as crypto_name,
+round(cast(double_field_2 as numeric),4) as coins,
+round(cast(double_field_4 as numeric),4) as purchase_unit_price,
+PARSE_DATE('%b %e %Y',string_field_5) as purchase_date,
+round(cast(double_field_6 as numeric),4) as current_unit_price,
+round(cast(double_field_7 as numeric),4) as change,
+round(cast(double_field_9 as numeric),4) as change_percent, 
+round(cast(double_field_11 as numeric),4) as high,
+round(cast(double_field_12 as numeric),4) as low,
+cast(double_field_13 as numeric) as volume
+FROM `delinparis.crypto_investment.crypto` LIMIT 1000)))
