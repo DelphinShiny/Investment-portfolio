@@ -1,0 +1,58 @@
+select PARSE_DATE("%F",date) as date,
+case when market_cap in('N/A') then null else cast (market_cap as numeric)end as market_cap,
+case when volume in('N/A')then null else cast (volume as numeric) end as volume,
+case when open in('N/A') then null else cast (open as numeric) end as open,
+case when close in('N/A')then null else cast (close as numeric) end as close
+from 
+(SELECT 
+Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){9}$') as date,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){7}$'), r'\..*|[^0-9]', '') as market_cap,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){5}$'), r'\..*|[^0-9]', '') as volume,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){3}$'), r'\$|,', '') as open,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){1}$'), r'\$|,', '') as close,
+'CRO' as crypto_ticker
+FROM `delinparis.crypto_investment.CRO` 
+
+union all 
+
+SELECT 
+Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){9}$') as date,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){7}$'), r'\..*|[^0-9]', '') as market_cap,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){5}$'), r'\..*|[^0-9]', '') as volume,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){3}$'), r'\$|,', '') as open,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){1}$'), r'\$|,', '') as close,
+'GRT' as crypto_ticker
+FROM `delinparis.crypto_investment.GRT` 
+
+union all
+
+SELECT 
+Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){9}$') as date,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){7}$'), r'\..*|[^0-9]', '') as market_cap,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){5}$'), r'\..*|[^0-9]', '') as volume,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){3}$'), r'\$|,', '') as open,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){1}$'), r'\$|,', '') as close,
+'LINK' as crypto_ticker
+FROM `delinparis.crypto_investment.LINK` 
+
+union all 
+
+SELECT 
+Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){9}$') as date,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){7}$'), r'\..*|[^0-9]', '') as market_cap,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){5}$'), r'\..*|[^0-9]', '') as volume,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){3}$'), r'\$|,', '') as open,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){1}$'), r'\$|,', '') as close,
+'XLM' as crypto_ticker
+FROM `delinparis.crypto_investment.XLM` 
+
+union all 
+
+SELECT 
+Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){9}$') as date,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){7}$'), r'\..*|[^0-9]', '') as market_cap,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){5}$'), r'\..*|[^0-9]', '') as volume,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){3}$'), r'\$|,', '') as open,
+regexp_replace(Regexp_extract(string_field_0,r'\s?([^\s]*)(?:[^\s]*\s?){1}$'), r'\$|,', '') as close,
+'HBAR' as crypto_ticker
+FROM `delinparis.crypto_investment.HBAR` )
