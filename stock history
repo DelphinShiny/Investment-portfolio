@@ -1,0 +1,174 @@
+SELECT extract(date from(parse_timestamp('%m/%d/%Y %H:%M:%S',string_field_0))) as date,
+cast(string_field_1 as numeric) as open,
+cast(string_field_2 as numeric) as high,
+cast(string_field_3 as numeric) as low,
+cast(string_field_4 as numeric) as close,
+cast(string_field_5 as numeric) as volume,'ABNB' as stock_ticker
+FROM `delinparis.Stocks_investment.ABNB`
+where string_field_0 <> "Date"
+
+union all
+
+SELECT extract(date from(parse_timestamp('%m/%d/%Y %H:%M:%S',string_field_0))) as date,
+cast(string_field_1 as numeric) as open,
+cast(string_field_2 as numeric) as high,
+cast(string_field_3 as numeric) as low,
+cast(string_field_4 as numeric) as close,
+cast(string_field_5 as numeric) as volume,'BIIB' as stock_ticker
+FROM `delinparis.Stocks_investment.BIIB`
+where string_field_0 <> "Date"
+
+union all 
+
+SELECT extract(date from(parse_timestamp('%m/%d/%Y %H:%M:%S',string_field_0))) as date,
+cast(string_field_1 as numeric) as open,
+cast(string_field_2 as numeric) as high,
+cast(string_field_3 as numeric) as low,
+cast(string_field_4 as numeric) as close,
+cast(string_field_5 as numeric) as volume,'CAT' as stock_ticker
+FROM `delinparis.Stocks_investment.CAT`
+where string_field_0 <> "Date"
+
+union all 
+
+SELECT extract(date from(parse_timestamp('%m/%d/%Y %H:%M:%S',string_field_0))) as date,
+cast(string_field_1 as numeric) as open,
+cast(string_field_2 as numeric) as high,
+cast(string_field_3 as numeric) as low,
+cast(string_field_4 as numeric) as close,
+cast(string_field_5 as numeric) as volume,'CTAS' as stock_ticker
+FROM `delinparis.Stocks_investment.CTAS`
+where string_field_0 <> "Date"
+
+union all 
+
+SELECT extract(date from(parse_timestamp('%m/%d/%Y %H:%M:%S',string_field_0))) as date,
+cast(string_field_1 as numeric) as open,
+cast(string_field_2 as numeric) as high,
+cast(string_field_3 as numeric) as low,
+cast(string_field_4 as numeric) as close,
+cast(string_field_5 as numeric) as volume,'CYRX' as stock_ticker
+FROM `delinparis.Stocks_investment.CYRX`
+where string_field_0 <> "Date"
+
+union all 
+
+SELECT extract(date from(parse_timestamp('%m/%d/%Y %H:%M:%S',string_field_0))) as date,
+cast(string_field_1 as numeric) as open,
+cast(string_field_2 as numeric) as high,
+cast(string_field_3 as numeric) as low,
+cast(string_field_4 as numeric) as close,
+cast(string_field_5 as numeric) as volume,'DDOG' as stock_ticker
+FROM `delinparis.Stocks_investment.DDOG`
+where string_field_0 <> "Date"
+
+union all 
+
+SELECT extract(date from(parse_timestamp('%m/%d/%Y %H:%M:%S',string_field_0))) as date,
+cast(string_field_1 as numeric) as open,
+cast(string_field_2 as numeric) as high,
+cast(string_field_3 as numeric) as low,
+cast(string_field_4 as numeric) as close,
+cast(string_field_5 as numeric) as volume,'EBAY' as stock_ticker
+FROM `delinparis.Stocks_investment.EBAY`
+where string_field_0 <> "Date"
+
+union all 
+
+SELECT extract(date from(parse_timestamp('%m/%d/%Y %H:%M:%S',string_field_0))) as date,
+cast(string_field_1 as numeric) as open,
+cast(string_field_2 as numeric) as high,
+cast(string_field_3 as numeric) as low,
+cast(string_field_4 as numeric) as close,
+cast(string_field_5 as numeric) as volume,'FTNT' as stock_ticker
+FROM `delinparis.Stocks_investment.FTNT`
+where string_field_0 <> "Date"
+
+union all 
+
+SELECT extract(date from(parse_timestamp('%m/%d/%Y %H:%M:%S',string_field_0))) as date,
+cast(string_field_1 as numeric) as open,
+cast(string_field_2 as numeric) as high,
+cast(string_field_3 as numeric) as low,
+cast(string_field_4 as numeric) as close,
+cast(string_field_5 as numeric) as volume,'GTES' as stock_ticker
+FROM `delinparis.Stocks_investment.GTES`
+where string_field_0 <> "Date"
+
+union all 
+
+SELECT extract(date from(parse_timestamp('%m/%d/%Y %H:%M:%S',string_field_0))) as date,
+cast(string_field_1 as numeric) as open,
+cast(string_field_2 as numeric) as high,
+cast(string_field_3 as numeric) as low,
+cast(string_field_4 as numeric) as close,
+cast(string_field_5 as numeric) as volume,'HON' as stock_ticker
+FROM `delinparis.Stocks_investment.HON`
+where string_field_0 <> "Date"
+
+union all 
+
+SELECT extract(date from(parse_timestamp('%m/%d/%Y %H:%M:%S',string_field_0))) as date,
+cast(string_field_1 as numeric) as open,
+cast(string_field_2 as numeric) as high,
+cast(string_field_3 as numeric) as low,
+cast(string_field_4 as numeric) as close,
+cast(string_field_5 as numeric) as volume,'LCID' as stock_ticker
+FROM `delinparis.Stocks_investment.LCID`
+where string_field_0 <> "Date"
+
+union all 
+
+SELECT extract(date from(parse_timestamp('%m/%d/%Y %H:%M:%S',string_field_0))) as date,
+cast(string_field_1 as numeric) as open,
+cast(string_field_2 as numeric) as high,
+cast(string_field_3 as numeric) as low,
+cast(string_field_4 as numeric) as close,
+cast(string_field_5 as numeric) as volume,'OKTA' as stock_ticker
+FROM `delinparis.Stocks_investment.OKTA`
+where string_field_0 <> "Date"
+
+union all 
+
+SELECT extract(date from(parse_timestamp('%m/%d/%Y %H:%M:%S',string_field_0))) as date,
+cast(string_field_1 as numeric) as open,
+cast(string_field_2 as numeric) as high,
+cast(string_field_3 as numeric) as low,
+cast(string_field_4 as numeric) as close,
+cast(string_field_5 as numeric) as volume,'PSFE' as stock_ticker
+FROM `delinparis.Stocks_investment.PSFE`
+where string_field_0 <> "Date"
+
+union all 
+
+SELECT extract(date from(parse_timestamp('%m/%d/%Y %H:%M:%S',string_field_0))) as date,
+cast(string_field_1 as numeric) as open,
+cast(string_field_2 as numeric) as high,
+cast(string_field_3 as numeric) as low,
+cast(string_field_4 as numeric) as close,
+cast(string_field_5 as numeric) as volume,'SBUX' as stock_ticker
+FROM `delinparis.Stocks_investment.SBUX`
+where string_field_0 <> "Date"
+
+union all 
+
+SELECT extract(date from(parse_timestamp('%m/%d/%Y %H:%M:%S',string_field_0))) as date,
+cast(string_field_1 as numeric) as open,
+cast(string_field_2 as numeric) as high,
+cast(string_field_3 as numeric) as low,
+cast(string_field_4 as numeric) as close,
+cast(string_field_5 as numeric) as volume,'TEAM' as stock_ticker
+FROM `delinparis.Stocks_investment.TEAM`
+where string_field_0 <> "Date"
+
+union all 
+
+SELECT extract(date from(parse_timestamp('%m/%d/%Y %H:%M:%S',string_field_0))) as date,
+cast(string_field_1 as numeric) as open,
+cast(string_field_2 as numeric) as high,
+cast(string_field_3 as numeric) as low,
+cast(string_field_4 as numeric) as close,
+cast(string_field_5 as numeric) as volume,'ZM' as stock_ticker
+FROM `delinparis.Stocks_investment.ZM`
+where string_field_0 <> "Date"
+
