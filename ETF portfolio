@@ -1,0 +1,25 @@
+create table `delinparis.etf_investment.etfs_portfolio`
+as
+(select *,
+round((market_value - purchase_price),4) as gain,
+round(((market_value -purchase_price)/purchase_price),4) as growth
+from
+(select *,
+round(shares * purchase_unit_price,4) as purchase_price,
+round(shares * current_unit_price,4) as market_value
+from
+(SELECT  
+string_field_0 as etf_ticker,
+string_field_1 as etf_name,
+round(cast(int64_field_2 as numeric),4) as shares,
+round(cast(double_field_3 as numeric),4) as purchase_unit_price,
+PARSE_DATE('%b %e %Y',string_field_4) as purchase_date,
+round(cast(double_field_5 as numeric),4) as current_unit_price,
+round(cast(double_field_6 as numeric),4) as change,
+round(cast(double_field_7 as numeric),4) as change_percent,
+round(cast(double_field_8 as numeric),4) as market_open_price,
+round(cast(double_field_9 as numeric),4) as previous_close_price,
+round(cast(double_field_10 as numeric),4) as high,
+round(cast(double_field_11 as numeric),4) as low,
+round(cast(int64_field_12 as numeric),4) as volume,
+FROM `delinparis.etf_investment.ETF` LIMIT 1000)))
