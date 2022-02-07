@@ -1,0 +1,29 @@
+create table `delinparis.Stocks_investment.stocks_portfolio`
+as
+select *,
+round(market_value - purchase_price,4) as Gain,
+round((market_value -purchase_price)/purchase_price,4) as growth
+from
+(select *,
+round(shares * purchase_unit_price,4) as purchase_price,
+round(shares * current_unit_price,4) as market_value,
+round(dividend/current_unit_price,4) as current_dividend_yield,
+round(dividend/purchase_unit_price,4) as dividend_yield_purchase,
+round(shares*dividend,4) as dividend_income
+from
+(SELECT string_field_0 as stock_ticker,
+string_field_1 as stock_name,
+string_field_2 as industry,
+round(cast(int64_field_3 as numeric),4) as shares,
+round(cast(double_field_4 as numeric),4) as purchase_unit_price,
+PARSE_DATE('%b %e %Y',string_field_5) as purchase_date,
+round(cast(double_field_6 as numeric),4) as current_unit_price,
+round(cast(double_field_7 as numeric),4) as change,
+round(cast(double_field_8 as numeric),4) as change_percent,
+round(cast(double_field_9 as numeric),4) as market_open_price,
+round(cast(double_field_10 as numeric),4) as previous_close_price,
+round(cast(double_field_11 as numeric),4) as high,
+round(cast(double_field_12 as numeric),4) as low,
+round(cast(int64_field_13 as numeric),4) as volume,
+round(cast(double_field_14 as numeric),4) as dividend
+FROM `delinparis.Stocks_investment.stocks`))
