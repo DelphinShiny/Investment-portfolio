@@ -19,5 +19,7 @@ round(cast(double_field_7 as numeric),4) as change,
 round(cast(double_field_9 as numeric),4) as change_percent, 
 round(cast(double_field_11 as numeric),4) as high,
 round(cast(double_field_12 as numeric),4) as low,
-cast(double_field_13 as numeric) as volume
+cast(int64_field_13 as numeric) as volume,
+int64_field_18 as market_rank,
+cast(double_field_19 as numeric) as market_cap
 FROM `delinparis.crypto_investment.crypto` LIMIT 1000)))
